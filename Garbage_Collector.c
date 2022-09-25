@@ -43,23 +43,27 @@ void atrib2(int *address1, int *address2){
     }
 }
 
-void print(int *address){
+void dump(){
 
-    for(int i=0;i<50;i++){
-        if(vetor[i].pointer==address){
-            printf("[Local de memoria: %d]",vetor[i].pointer);
-            printf("[Contador: %d]",vetor[i].counter);
-        }
+    if(vetor==NULL){
+        printf("Nenhuma memória alocada");
+    }
+
+    for(int position = 0; position < count_memory; position++){
+        
+            printf("[Local de memoria: %d]",vetor[position].pointer);
+            printf("[Contador: %d]\n",vetor[position].counter);
     }
 }
 
 
 int main(){
+    dump();
     int *v = malloc2(sizeof(int));
     int *w = malloc2(sizeof(int));
     atrib2(v,w);
-    print(v);
-    print(w);
+    dump();
+    
 
     return 0;
 }
