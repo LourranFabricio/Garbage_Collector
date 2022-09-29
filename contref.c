@@ -1,3 +1,4 @@
+#include "contref.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -84,22 +85,3 @@ void atrib2(int *address1, int *address2){
     }
 
 }
-
-int main(){
-    dump();
-    printf("\n-------------------------------------\n");
-    int *v = malloc2(sizeof(int));
-    int *s = malloc2(sizeof(int));
-    int *w = malloc2(sizeof(int));
-    dump();
-    atrib2(v,s);
-    atrib2(w,s);
-    printf("\n-------------------------------------\n");
-    
-    dump();
-    
-
-
-    return 0;
-}
-
